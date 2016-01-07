@@ -1,6 +1,5 @@
-<p>
-  <h1><%= @recipe.name %></h1>
-</p>
+<%= render 'shared/page_title', title: @recipe.name %>
+
 <div class='row'>
   <div class='col-md-4 pull-right center'>
     <%= gravatar_for @recipe.chef, size: 200 %>
@@ -14,9 +13,11 @@
       <p>
         <strong>Steps:</strong>
       </p>
-      <%= @recipe.description %>
+      <%= simple_format(@recipe.description) %>
     </div>
   </div>
 </div>
 
-<h5><%= link_to 'Return to Recipes', recipes_path, class:'btn btn-warning btn small' %></h5>
+<div class='row'>
+  <h5><%= link_to 'Return to Recipes', recipes_path, class:'btn btn-warning btn small' %> <%= link_to 'Edit This Recipe', edit_recipe_path, class:'btn btn-warning btn small' %></h5>
+</div>
