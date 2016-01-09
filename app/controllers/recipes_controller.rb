@@ -43,6 +43,7 @@ class RecipesController < ApplicationController
     like = Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
     if like.valid?
       flash[:success] = "Your vote has been recorded"
+      @recipe.increment(:like_count).save if like.like 
       redirect_to :back
     else
       flash[:danger] = "You can only like/dislike once"
