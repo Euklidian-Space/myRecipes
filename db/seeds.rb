@@ -10,7 +10,7 @@ include Faker
 
 100.times do 
 
-  Chef.create({chefname:"#{Name.name}",email:"#{Internet.email}"})
+  Chef.create({chefname:"#{Name.name}",email:"#{Internet.email}", password:"#{Internet.password}"})
 
   Recipe.create({name:"#{Lorem.characters(5)}", summary:"#{Lorem.sentence(4)}", 
                  description:"#{Lorem.sentence(10)}", 

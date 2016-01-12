@@ -20,3 +20,39 @@ email: string
 -email must be present
 -email must be unique
 -email must be valid
+
+Chefs:
+
+What we have:
+  -Chef model and validations
+  -chefs table with columns chefname and email
+  
+What we need to do:
+  -Add passwords to the chefs table so chef can be authenticated and logged in
+  -Use email as log in credentials, since email is unique
+  -Ability to reguester new chefs to use the app
+  -Ability to display chefs profile
+  -Ability to list chefs using the app
+  -Ability for chefs to log in and logout of the app
+  -Restrict actions like create, edit, and like for logged in chefs
+  -Restricting edit of recipes by chefs who created it
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
