@@ -37,6 +37,14 @@ What we need to do:
   -Restrict actions like create, edit, and like for logged in chefs
   -Restricting edit of recipes by chefs who created it
   
+
+Authenticating updates:
+  -Show recipe page -> Ability to edit/update only own recipe
+  -Navigation partial -> Toggle menu, restrict new
+  -Restrict thumbs up and down action to logged_in users only
+  -Recipe -> update to current_user
+  -Before_action :require_user, except [:show, :index]
+  -Before_action :require_same_user for chefs, only [:edit, update]
   
   
   
