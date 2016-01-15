@@ -5,4 +5,7 @@ module ApplicationHelper
     gravatar_url = "http://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: chef.chefname, class: "gravatar")
   end
+  
+  
+  
 end
