@@ -47,6 +47,10 @@ Authenticating updates:
   -Before_action :require_same_user for chefs, only [:edit, update]
   
   
+Admin functionality
+  
+  
+  
   
   
   
