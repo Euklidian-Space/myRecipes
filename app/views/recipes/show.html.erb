@@ -1,5 +1,6 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
+
 <div class='row'>
   <div class='col-md-4 pull-right center'>
     <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
@@ -47,4 +48,14 @@
         <%= link_to 'Delete this Recipe', @recipe, method: :delete, class: 'btn btn-danger btn small', data: {confirm: 'Are you Sure?'} %>
       
     <% end %>
+    
+    
+    
   </div>
+  
+
+<%= render @recipe.reviews %>
+
+<% if logged_in? %>  
+  <%= render 'reviews/form' %>
+<% end %>

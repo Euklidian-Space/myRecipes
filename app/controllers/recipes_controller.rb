@@ -60,6 +60,10 @@ class RecipesController < ApplicationController
     end
   end
   
+  def review
+    review = Review.create(review: params[:review], chef: current_user, recipe: @recipe)
+  end
+  
   private
   
     def recipe_params
