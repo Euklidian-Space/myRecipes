@@ -1,6 +1,7 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
 
+
 <div class='row'>
   <div class='col-md-4 pull-right center'>
     <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
@@ -38,9 +39,9 @@
 
 
   <div class='row'>
-    <h5><%= link_to 'Return to Recipes', recipes_path, class:'btn btn-warning btn small' %>
+    <h5><%= link_to 'Return to Recipes', recipes_path, class:'btn btn-warning btn small show_btn' %>
     <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
-      <%= link_to 'Edit This Recipe', edit_recipe_path, class:'btn btn-warning btn small' %>
+      <%= link_to 'Edit This Recipe', edit_recipe_path, class:'btn btn-warning btn small show_btn' %>
        </h5>
     <% end %>
     <% if logged_in? and current_user.admin? %>
@@ -53,9 +54,26 @@
     
   </div>
   
+  
 
-<%= render @recipe.reviews %>
+
+
+<% if @reviews.any? %>
+  <div class="col-sm-12">
+      <h3>Reviews</h3>
+  </div>
+  <div class='container'>
+    <%= will_paginate @reviews %>
+    <%= render partial: 'reviews/review', collection: @reviews %>
+  </div>
+<% end %>
+
 
 <% if logged_in? %>  
   <%= render 'reviews/form' %>
 <% end %>
+
+
+
+
+

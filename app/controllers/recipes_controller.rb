@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   end
   
   def show
-    
+    @reviews = @recipe.reviews.paginate(page:params[:page], per_page:4)
   end
   
   def new
@@ -19,6 +19,7 @@ class RecipesController < ApplicationController
   end
   
   def create 
+    
     @recipe = Recipe.new(recipe_params)
     @recipe.chef = current_user
     
@@ -60,9 +61,7 @@ class RecipesController < ApplicationController
     end
   end
   
-  def review
-    review = Review.create(review: params[:review], chef: current_user, recipe: @recipe)
-  end
+  
   
   private
   
